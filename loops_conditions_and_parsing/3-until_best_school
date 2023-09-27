@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
-#using until to display "Best School"
-i=1
-until false;
+# This script is displaying "Best School" 10 times
+i=0
+until [ $i -eq 10 ]
 do
 echo "Best School"
-i=$((i+1))
-if ((i<=10));
-then
-continue
-else
-break
-fi
+((i++))
 done
