@@ -1,23 +1,17 @@
-#!/usr/bin/env bash
-# Manages "manage_my_process"
-killer() {
-    kill "$(pgrep -f /manage_my_process)"
-    rm -f /var/run/my_process.pid &
-}
+#!/bin/bash
 
-if [[ "$1" == "start" ]]
-then
-    ./manage_my_process &
-    echo "$!" > /var/run/my_process.pid
-    echo "manage_my_process started"
-elif [[ "$1" == "stop" ]]
-then
-    killer; echo "manage_my_process stopped";
-elif [[ "$1" == "restart" ]]
-then
-    killer; ./manage_my_process &
-    echo "$!" > /var/run/my_process.pid
-    echo "manage_my_process restarted"
-else
-    echo "Usage: manage_my_process {start|stop|restart}"
-fi
+case $1 in
+    "start")
+        sudo ./manage_my_process start
+        ;;
+    "stop")
+        sudo ./manage_my_process stop
+        ;;
+    "restart")
+        sudo ./manage_my_process restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac
+
