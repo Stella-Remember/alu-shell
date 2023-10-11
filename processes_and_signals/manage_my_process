@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# my process
+# my process
+
+command="$1"
+
+    "start")
+        sudo ./manage_my_process start
+        ;;
+    "stop")
+        sudo ./manage_my_process stop
+        ;;
+    "restart")
+        sudo ./manage_my_process restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac
+
