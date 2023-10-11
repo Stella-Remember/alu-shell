@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# my process
+# my process
 
 case $1 in
     "start")
