@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#manage my files
-while [[ 1 -q 1 ]]; do 
-	echo "I am alive!" >> /tmp/my_process
+# Indefinitely writes "I am alive!" to /tmp/my_process
+while true; do
+	echo "I am alive!" > /tmp/my_process
 	sleep 2
 done
